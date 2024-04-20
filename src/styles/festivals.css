@@ -1,0 +1,68 @@
+.festivals .wrapper{
+    max-width: fit-content;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.festival-kartica{
+    width: 300px;
+    height: 650px;
+    padding: 30px;
+    margin: 30px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.festival-kartica:hover{
+    -webkit-box-shadow: 0px 2px 26px -8px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 2px 26px -8px rgba(0,0,0,0.75);
+    box-shadow: 0px 2px 26px -8px rgba(0,0,0,0.75);
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.add-festival{
+    max-width: 300px;
+    min-height: 300px;
+    padding: 30px;
+    margin: 30px;
+    border-radius: 6%;
+    text-align: center;
+    position: relative;
+}
+
+.plus-div2{
+    max-width: fit-content;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-size: 200px;
+    color: rgb(220, 220, 220);
+}
+
+.add-festival:hover, .plus-div2:hover{
+    cursor: pointer;
+    background-color: rgb(195, 195, 195);
+    color: white;
+}
+
+.festival-kartica h1, h3{
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.festival-kartica .org-slika{
+    object-fit: cover;
+    width: 250px;
+    height: 250px;
+    margin-top: 20px;
+}
+
+.img-div{
+    max-width: fit-content;
+    margin:0 auto;
+}

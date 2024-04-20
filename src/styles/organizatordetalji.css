@@ -1,0 +1,47 @@
+.organizator-stranica{
+    padding-top: 30px;
+    text-align: center;
+}
+
+.organizator-stranica h1{
+    font-size: 90px;
+    margin-bottom: 40px;
+}
+
+.organizator-stranica img{
+    object-fit: cover;
+    height: 50vh;
+    width: 50vh;
+}
+
+.brand-div{
+    margin-bottom: 40px;
+}
+
+.info-div{
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 90px;
+}
+
+h2{
+    margin-top: 20px;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.info-div h4{
+    font-size: 28px;
+}
+
+.desc-div{
+    max-width: 70%;
+    margin:0 auto;
+}
+
+.festivals-organized:hover{
+    cursor: pointer;
+    color: rgb(255, 0, 0);
+    transition: .3s ease;
+}

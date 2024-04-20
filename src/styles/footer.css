@@ -1,0 +1,22 @@
+.footer-div{
+    padding: 40px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.separator-line{
+    margin: 0 auto;
+    margin-top: 50px;
+    width: 90%;
+    height: 1px;
+    background-color: gray;
+}
+
+.sm-links, .contact-info{
+    text-align: center;
+}
+
+.sm-links a{
+    margin-left: 10px;
+    margin-right: 10px;
+}

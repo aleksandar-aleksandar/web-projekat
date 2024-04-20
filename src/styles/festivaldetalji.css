@@ -1,0 +1,23 @@
+.festival-stranica{
+    text-align: center;
+}
+
+.festival-stranica h1{
+    font-size: 90px;
+    margin-bottom: 40px;
+}
+
+.festival-stranica a{
+    color: aqua;
+}
+
+.festival-stranica img{
+    object-fit: cover;
+    height: 50vh;
+    width: 50vh;
+}
+
+.img-div{
+    max-width: fit-content;
+    margin: 0 auto;
+}
