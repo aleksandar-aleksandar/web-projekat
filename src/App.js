@@ -19,6 +19,8 @@ import AddFestival from "./pages/AddFestival";
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import Footer from "./components/Footer";
+import EditFestival from "./pages/EditFestival";
+import EditOrganizer from "./pages/EditOrganizer";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -563,6 +565,8 @@ function App() {
           <Route path="/festival/:id" element={<FestivalDetalji festivali = {festivali} organizatori = {organizatori}/>} />
           <Route path="/add-new-organizer" element={<AddOrganizer />}/>
           <Route path="/add-new-festival" element={<AddFestival />}/>
+          <Route path="/edit-organizator/:id" element={<EditOrganizer festivali = {festivali} organizatori = {organizatori}/>}/>
+          <Route path="/edit-festival/:id" element={<EditFestival festivali = {festivali} organizatori = {organizatori}/>}/>
         </Routes>
         <Footer />
       </Router>
