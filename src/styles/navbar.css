@@ -1,4 +1,4 @@
-.navbar{
+.navbar {
     position: relative;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -7,16 +7,17 @@
     margin-bottom: 40px;
 }
 
-.navbar-logo{
+.navbar-logo {
     text-align: center;
 }
 
-.navbar-logo img{
+.navbar-logo img {
     max-height: 50px;
     max-width: 50px;
 }
 
-.navbar-buttons button, .navbar-buttons a{
+.navbar-buttons button,
+.navbar-buttons a {
     color: black;
     text-decoration: none;
     font-weight: bold;
@@ -28,18 +29,20 @@
     cursor: pointer;
 }
 
-.navbar-buttons a:hover, .navbar-buttons button:hover{
+.navbar-buttons a:hover,
+.navbar-buttons button:hover {
     color: darkblue;
     transition: .3 ease;
 }
 
-.navbar-buttons{
+.navbar-buttons {
     text-align: center;
 }
 
-.login-div, .register-div{
+.login-div,
+.register-div {
     position: fixed;
-    border:1px solid;
+    border: 1px solid;
     right: 80px;
     padding: 30px;
     border-radius: 12px;
@@ -47,7 +50,7 @@
     background-color: white;
 }
 
-input{
+input {
     height: 35px;
     font-size: 21px;
     border: none;
@@ -55,16 +58,18 @@ input{
     margin-right: 15px;
 }
 
-input:focus{
+input:focus {
     outline: none;
 }
 
-.label{
+.label {
     font-size: 20px;
-    margin-top:10px;
+    margin-top: 10px;
 }
 
-.register-div button, .login-div button, .search-div button{
+.register-div button,
+.login-div button,
+.search-div button {
     height: 35px;
     width: 81px;
     margin-top: 16px;
@@ -77,12 +82,56 @@ input:focus{
     font-weight: bold;
 }
 
-.register-div button:hover, .login-div button:hover, .search-div button:hover{
+.register-div button:hover,
+.login-div button:hover,
+.search-div button:hover {
     background-color: rgb(51, 96, 179);
     transition: .3s ease;
 }
 
-.search-div form{
+.search-div form {
     max-width: fit-content;
     margin: 0 auto;
+}
+
+/* Responsive Styles for all devices smaller than 768px */
+@media (max-width: 768px) {
+    .navbar {
+        grid-template-columns: 1fr;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        height: auto;
+        margin: 0 auto !important;
+    }
+
+    .navbar-buttons {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .navbar-buttons button,
+    .navbar-buttons a {
+        font-size: 24px;
+        margin: 5px 0;
+    }
+
+    .login-div,
+    .register-div {
+        right: 10px;
+        width: calc(100% - 20px);
+        padding: 20px;
+    }
+
+    input {
+        font-size: 18px;
+        margin-right: 10px;
+    }
+
+    .register-div button,
+    .login-div button,
+    .search-div button {
+        width: 100%;
+        font-size: 18px;
+    }
 }

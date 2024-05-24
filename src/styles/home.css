@@ -1,20 +1,20 @@
-.organizatori{
+.organizatori {
     margin: 0 auto;
     max-width: fit-content;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
 
-a{
+a {
     text-decoration: none;
     color: black;
 }
 
-.wrapper{
+.wrapper {
     align-items: center;
 }
 
-.add-organizer-div{
+.add-organizer-div {
     position: relative;
     width: 460px;
     height: 700px;
@@ -24,7 +24,7 @@ a{
     border-radius: 12px;
 }
 
-.plus-div{
+.plus-div {
     max-width: fit-content;
     margin: 0;
     position: absolute;
@@ -36,8 +36,33 @@ a{
     color: rgb(220, 220, 220);
 }
 
-.add-organizer-div:hover, .plus-div:hover{
+.add-organizer-div:hover,
+.plus-div:hover {
     cursor: pointer;
     background-color: rgb(195, 195, 195);
     color: white;
+}
+
+@media (max-width: 768px) {
+    .organizatori {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .add-organizer-div {
+        width: calc(100% - 40px);
+        height: auto;
+        padding: 20px;
+        margin: 20px 0;
+    }
+
+    .plus-div {
+        font-size: 150px;
+    }
+
+    .plus-div:hover {
+        background-color: transparent;
+        /* Remove background color change on hover */
+    }
 }

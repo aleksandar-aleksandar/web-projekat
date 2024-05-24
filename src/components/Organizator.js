@@ -16,11 +16,11 @@ const Organizator = ({ id, ime, festivali, opis, slika }) => {
 
   return (
     <div className="organizator-kartica">
-      <img className="organizator-img" src={slika} alt={ime} />
+      <img className="organizator-img" src={process.env.PUBLIC_URL + slika} alt={ime} />
       <h1>{ime}</h1>
       <h3>{limitedFestivals.join(', ') + ", ..."}</h3>
-      <p>{truncateDescription(opis, 150)}</p> 
-      <Link to={`/edit-organizator/${id}`}><button title='Edit' className='edit-btn'><img src={edit}/></button></Link>
+      <p>{truncateDescription(opis, 150)}</p>
+      <Link to={`/edit-organizator/${id}`}><button title='Edit' className='edit-btn'><img src={edit} /></button></Link>
     </div>
   );
 };

@@ -1,10 +1,10 @@
-.footer-div{
+.footer-div {
     padding: 40px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
 
-.separator-line{
+.separator-line {
     margin: 0 auto;
     margin-top: 50px;
     width: 90%;
@@ -12,11 +12,37 @@
     background-color: gray;
 }
 
-.sm-links, .contact-info{
+.sm-links,
+.contact-info {
     text-align: center;
 }
 
-.sm-links a{
+.sm-links a {
     margin-left: 10px;
     margin-right: 10px;
+}
+
+/* Responsive Styles for all devices smaller than 768px */
+@media (max-width: 768px) {
+    .footer-div {
+        grid-template-columns: 1fr;
+        padding: 20px;
+        margin: 0 auto;
+    }
+
+    .separator-line {
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    .sm-links,
+    .contact-info {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .sm-links a {
+        display: inline-block;
+        margin: 5px 10px;
+    }
 }
