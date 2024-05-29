@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import "../styles/navbar.css"
 import logo from "../imgs/logo.png"
-const Navbar = () => {
+const Navbar = ({ setSearchQuery }) => {
   const [showLogin, setShowLogin] = useState(false)
   const [showRegister, setShowRegister] = useState(false)
 
@@ -17,6 +17,10 @@ const Navbar = () => {
     setShowLogin(false)
   }
 
+  const handleInputChange = (e) => {
+    setSearchQuery(e.target.value)
+  }
+
   return (
     <>
       <div className="navbar">
@@ -25,7 +29,7 @@ const Navbar = () => {
         </div>
         <div className='search-div'>
           <form>
-            <input placeholder='Search...'></input>
+            <input onChange={handleInputChange} placeholder='Search...'></input>
             <button type='submit'>Search</button>
           </form>
         </div>

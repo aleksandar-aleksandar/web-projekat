@@ -69,6 +69,10 @@ h3 {
     margin: 0 auto;
 }
 
+.highlight {
+    background-color: yellow;
+}
+
 /* Responsive Styles for all devices smaller than 768px */
 @media (max-width: 768px) {
     .festivals .wrapper {

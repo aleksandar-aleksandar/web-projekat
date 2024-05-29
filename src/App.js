@@ -13,7 +13,7 @@ import EditFestival from "./pages/EditFestival";
 import EditOrganizer from "./pages/EditOrganizer";
 
 function App() {
-
+  const [searchQuery, setSearchQuery] = useState("");
   const [festivali, setFestivals] = useState([]);
   const [organizatori, setOrganizatori] = useState([]);
   const firebaseUrl = 'https://projekatwd-bd6c7-default-rtdb.europe-west1.firebasedatabase.app';
@@ -54,10 +54,10 @@ function App() {
     <div className="App">
 
       <Router>
-        <Navbar />
+        <Navbar setSearchQuery={setSearchQuery} />
         <Routes>
-          <Route path="/" element={<Home festivali={festivali} organizatori={organizatori} />} />
-          <Route path="/festivals" element={<Festivals festivali={festivali} organizatori={organizatori} />} />
+          <Route path="/" element={<Home festivali={festivali} organizatori={organizatori} searchQuery={searchQuery} />} />
+          <Route path="/festivals" element={<Festivals festivali={festivali} organizatori={organizatori} searchQuery={searchQuery} />} />
           <Route path="/organizator/:id" element={<OrganizatorDetalji festivali={festivali} organizatori={organizatori} />} />
           <Route path="/festival/:id" element={<FestivalDetalji festivali={festivali} organizatori={organizatori} />} />
           <Route path="/add-new-organizer" element={<AddOrganizer />} />

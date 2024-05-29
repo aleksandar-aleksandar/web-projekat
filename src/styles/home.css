@@ -43,6 +43,10 @@ a {
     color: white;
 }
 
+.highlight {
+    background-color: yellow;
+}
+
 @media (max-width: 768px) {
     .organizatori {
         grid-template-columns: 1fr;
