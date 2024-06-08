@@ -3,7 +3,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     height: 50px;
-    margin-top: 50px;
+    margin-top: 30px;
     margin-bottom: 40px;
 }
 
@@ -21,7 +21,7 @@
     color: black;
     text-decoration: none;
     font-weight: bold;
-    font-size: 29px;
+    font-size: 22px;
     margin-left: 10px;
     margin-right: 10px;
     background: none;
@@ -37,22 +37,31 @@
 
 .navbar-buttons {
     text-align: center;
+    margin-top: -10px;
 }
 
 .login-div,
 .register-div {
     position: fixed;
     border: 1px solid;
-    right: 80px;
-    padding: 30px;
+    right: 50px;
+    padding: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
     border-radius: 12px;
-    margin-top: 20px;
+    top:100px;
+    max-width: fit-content;
+    margin: 0 auto;
     background-color: white;
 }
 
+.register-div div, .login-div div{
+    margin: 0 auto;
+}
+
 input {
-    height: 35px;
-    font-size: 21px;
+    height: 30px;
+    font-size: 17px;
     border: none;
     border-bottom: 1px solid;
     margin-right: 15px;
@@ -63,7 +72,7 @@ input:focus {
 }
 
 .label {
-    font-size: 20px;
+    font-size: 14px;
     margin-top: 10px;
 }
 

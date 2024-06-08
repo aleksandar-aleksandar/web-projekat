@@ -1,15 +1,17 @@
 .festivals .wrapper {
     max-width: fit-content;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .festival-kartica {
     width: 300px;
-    height: 650px;
-    padding: 30px;
-    margin: 30px;
+    height: 560px;
+    padding: 15px;
+    margin: 20px;
     border-radius: 12px;
     text-align: center;
 }
@@ -23,7 +25,7 @@
 }
 
 .add-festival {
-    max-width: 300px;
+    min-width: 300px;
     min-height: 300px;
     padding: 30px;
     margin: 30px;
@@ -59,8 +61,8 @@ h3 {
 
 .festival-kartica .org-slika {
     object-fit: cover;
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     margin-top: 20px;
 }
 

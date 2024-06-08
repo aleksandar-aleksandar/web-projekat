@@ -15,27 +15,44 @@ const Festivals = ({ festivali, organizatori, searchQuery }) => {
     );
   };
 
-  const filteredFestivali = festivali.filter(festival =>
-    festival.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    festival.genre.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  const allFestivals = [];
+
+  for (const categoryKey of Object.keys(festivali)) {
+    const festivalsInCategory = festivali[categoryKey];
+    for (const festivalId of Object.keys(festivalsInCategory)) {
+      const festivalDetails = festivalsInCategory[festivalId];
+      allFestivals.push({ organizerId: categoryKey, id: festivalId, ...festivalDetails });
+    }
+  }
+
+  console.log(allFestivals);
+
+  const filterredFestivali = allFestivals.filter(festival => festival.naziv.toLowerCase().includes(searchQuery.toLowerCase()) || festival.tip.toLowerCase().includes(searchQuery.toLowerCase())|| festival.opis.toLowerCase().includes(searchQuery.toLowerCase()))
+
 
   return (
     <div className='festivals'>
       <div className='wrapper'>
-        {filteredFestivali.map(festival => (
-          <Link key={festival.id} to={`/festival/${festival.id}`}>
+        {Object.entries(filterredFestivali).map(([id, festival]) => (
+          <div>
+          <Link key={id} to={`/festival/${festival.organizerId}/${festival.id}`}>
+            {console.log(festival.organizerId + " " + id)}
             <Festival
               organizerId={festival.organizerId}
               id={festival.id}
-              ime={highlightText(festival.name, searchQuery)}
-              mesec={festival.month}
-              zanr={highlightText(festival.genre, searchQuery)}
-              opis={festival.description}
+              naziv={highlightText(festival.naziv, searchQuery)}
+              opis = {festival.opis}
+              slike = {festival.slike}
+              tip = {highlightText(festival.tip, searchQuery)}
+              prevoz = {festival.prevoz}
+              cena = {festival.cena}
+              maxOsoba = {festival.maxOsoba}
               organizatori={organizatori}
             />
           </Link>
+          </div>
         ))}
+        <div>
         <Link to="/add-new-festival">
           <div title="Add A Festival" className='add-festival'>
             <div className='plus-div2'>
@@ -43,6 +60,7 @@ const Festivals = ({ festivali, organizatori, searchQuery }) => {
             </div>
           </div>
         </Link>
+        </div>
       </div>
     </div>
   );

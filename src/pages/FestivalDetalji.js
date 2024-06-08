@@ -1,33 +1,44 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { useParams } from 'react-router-dom'
-import "../styles/festivaldetalji.css"
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import { Carousel } from 'react-responsive-carousel'; // Import Carousel component
+import 'react-responsive-carousel/lib/styles/carousel.min.css'; // Import Carousel styles
+import "../styles/festivaldetalji.css";
 
-const FestivalDetalji = ({festivali, organizatori}) => {
-    
-    const {id} = useParams()
-    const festival = festivali.find(festival => festival.id === parseInt(id));
-    const organizator = organizatori.find(organizator => organizator.id === parseInt(festival.organizerId));
+const FestivalDetalji = ({ festivali, organizatori }) => {
+    const { id1, id2 } = useParams();
+    const festival = festivali[id1][id2];
+    const organizatorIds = Object.entries(organizatori)
+        .filter(([id, organizator]) => organizator.festivali === id1)
+        .map(([id, organizator]) => id);
+
+    const organizatorId = organizatorIds[0];
 
     return (
         <div className='festival-stranica'>
-            <div className= "brand-div">
-            <h1>{festival.name} by <Link to = {`/organizator/${organizator.id}`}>{organizator.name}</Link></h1>
-            <img  src = {organizator.image}/>
+            <div className="brand-div">
+                <h1>{festival.naziv} by <Link to={`/organizator/${organizatorId}`}>{organizatori[organizatorId].naziv}</Link></h1>
+                <Carousel>
+                    {festival.slike.map((imageUrl, index) => (
+                        <div key={index}>
+                            <img src={imageUrl} alt={`Image ${index + 1}`} />
+                        </div>
+                    ))}
+                </Carousel>
             </div>
-            <hr/>
+            <hr />
             <div className='info-div'>
                 <div>
-                <h2>Every year in {festival.month}</h2>
-                <h2>Genre: {festival.genre}</h2>
+                    <h2>Every year in {festival.cena}</h2>
+                    <h2>Genre: {festival.tip}</h2>
                 </div>
                 <div>
                     <h2>Information and history</h2>
-                <h4>{festival.description}</h4> 
+                    <h4>{festival.opis}</h4>
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default FestivalDetalji
+export default FestivalDetalji;

@@ -1,12 +1,13 @@
 .organizator-img{
     object-fit: cover;
-    height: 400px;
-    width: 400px;
+    height: 300px;
+    width: 300px;
+    margin: 0 auto;
 }
 
 .organizator-kartica{
-    width: 460px;
-    height: 700px;
+    width: 350px;
+    height: 590px;
     padding: 30px;
     padding-bottom: 50px;
     margin: 30px;

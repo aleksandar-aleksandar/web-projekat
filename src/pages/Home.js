@@ -15,25 +15,32 @@ const Home = ({ organizatori, festivali, searchQuery }) => {
     );
   };
 
-  const filteredOrganizatori = organizatori.filter(organizator =>
-    organizator.name.toLowerCase().includes(searchQuery.toLowerCase())
+  const filteredOrganizatori = Object.fromEntries(
+    Object.entries(organizatori).filter(([id, organizator]) =>
+      organizator.naziv.toLowerCase().includes(searchQuery.toLowerCase())
+    )
   );
 
   return (
     <div className="wrapper">
       <div className="organizatori">
-        {filteredOrganizatori.map(organizator => (
-          <Link key={organizator.id} to={`/organizator/${organizator.id}`} className='organizatori-links'>
-            <Organizator
-              key={organizator.id}
-              id={organizator.id}
-              ime={highlightText(organizator.name, searchQuery)}
-              festivali={organizator.festivals}
-              opis={organizator.description}
-              slika={organizator.image}
-            />
-          </Link>
-        ))}
+        {
+          Object.entries(filteredOrganizatori).map(([id, organizator]) => (
+            <Link key={id} to={`/organizator/${id}`} className='organizatori-links'>
+              <Organizator
+                key={id}
+                id={id}
+                naziv={highlightText(organizator.naziv, searchQuery)}
+                adresa = {organizator.adresa}
+                godinaOsnivanja = {organizator.godinaOsnivanja}
+                logo={organizator.logo}
+                kontaktTelefon = {organizator.kontaktTelefon}
+                email = {organizator.email}
+                festivali={organizator.festivali} 
+              />
+            </Link>
+          ))
+        }
         <Link to="/add-new-organizer">
           <div title='Add new festival organizer' className='add-organizer-div'>
             <div className='plus-div'>+</div>

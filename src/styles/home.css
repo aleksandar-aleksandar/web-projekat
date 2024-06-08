@@ -1,8 +1,10 @@
 .organizatori {
     margin: 0 auto;
     max-width: fit-content;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 a {
@@ -12,12 +14,13 @@ a {
 
 .wrapper {
     align-items: center;
+    margin-top: 30px;
 }
 
 .add-organizer-div {
     position: relative;
-    width: 460px;
-    height: 700px;
+    width: 350px;
+    height: 590px;
     padding: 30px;
     padding-bottom: 50px;
     margin: 30px;

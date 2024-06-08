@@ -30,7 +30,6 @@ const Navbar = ({ setSearchQuery }) => {
         <div className='search-div'>
           <form>
             <input onChange={handleInputChange} placeholder='Search...'></input>
-            <button type='submit'>Search</button>
           </form>
         </div>
         <div className="navbar-buttons">
@@ -65,11 +64,35 @@ const Navbar = ({ setSearchQuery }) => {
             <input required></input>
           </div>
           <div>
-            <h5 className='label'>Username</h5>
+            <h5 className='label'>Korisnicko ime</h5>
             <input required></input>
           </div>
           <div>
-            <h5 className='label'>Password</h5>
+            <h5 className='label'>Ime</h5>
+            <input required></input>
+          </div>
+          <div>
+            <h5 className='label'>Prezime</h5>
+            <input required></input>
+          </div>
+          <div>
+            <h5 className='label'>Datum rodjenja</h5>
+            <input type="date" required></input>
+          </div>
+          <div>
+            <h5 className='label'>Adresa</h5>
+            <input required></input>
+          </div>
+          <div>
+            <h5 className='label'>Telefon</h5>
+            <input required></input>
+          </div>
+          <div>
+            <h5 className='label'>Zanimanje</h5>
+            <input required></input>
+          </div>
+          <div>
+            <h5 className='label'>Lozinka</h5>
             <input required type='password'></input>
           </div>
           <div>
