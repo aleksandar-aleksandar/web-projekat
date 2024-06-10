@@ -1,9 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Organizator from '../components/Organizator';
 import "../styles/home.css";
 import { Link } from 'react-router-dom';
 
-const Home = ({ organizatori, festivali, searchQuery }) => {
+const Home = ({firebaseUrl,searchQuery, adminMode }) => {
+
+  const [organizatori, setOrganizatori] = useState({});
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const organizatoriResponse = await fetch(`${firebaseUrl}/organizatoriFestivala.json`);
+        if (!organizatoriResponse.ok) throw new Error('Failed to fetch organizers');
+        const organizatoriData = await organizatoriResponse.json();
+        setOrganizatori(organizatoriData);        
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, [organizatori]);
+
   const highlightText = (text, query) => {
     if (!query) return text;
 
@@ -24,6 +42,7 @@ const Home = ({ organizatori, festivali, searchQuery }) => {
   return (
     <div className="wrapper">
       <div className="organizatori">
+      
         {
           Object.entries(filteredOrganizatori).map(([id, organizator]) => (
             <Link key={id} to={`/organizator/${id}`} className='organizatori-links'>
@@ -37,16 +56,19 @@ const Home = ({ organizatori, festivali, searchQuery }) => {
                 kontaktTelefon = {organizator.kontaktTelefon}
                 email = {organizator.email}
                 festivali={organizator.festivali} 
+                adminMode = {adminMode}
               />
             </Link>
           ))
         }
-        <Link to="/add-new-organizer">
+        {adminMode === true ? <Link to="/add-new-organizer">
           <div title='Add new festival organizer' className='add-organizer-div'>
             <div className='plus-div'>+</div>
           </div>
-        </Link>
+        </Link> : <></>}
+        
       </div>
+
     </div>
   );
 };

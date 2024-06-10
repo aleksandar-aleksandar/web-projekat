@@ -2,16 +2,25 @@ import { useParams } from 'react-router-dom';
 import "../styles/organizatordetalji.css"
 import { Link } from 'react-router-dom';
 import Festival from '../components/Festival';
+import { useEffect } from 'react';
 
 const OrganizatorDetalji = ({ organizatori, festivali }) => {
+
+
     const { id } = useParams();
     const organizator = organizatori[id];
+
+    useEffect(()=> {
+        console.log("useeffect")
+    }, []);
 
     if (!organizator) {
         return <div>Loading...</div>;
     }
 
     const organizedFestivals = festivali[organizator.festivali];
+
+   
 
     return (
         <div className='organizator-stranica'>

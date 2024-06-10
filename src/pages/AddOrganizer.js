@@ -1,6 +1,13 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const AddOrganizer = ({ firebaseUrl }) => {
+const AddOrganizer = ({ firebaseUrl, adminMode }) => {
+  const navigate = useNavigate();
+
+  if(!adminMode){
+    navigate("/*")
+  }
+
   const [formData, setFormData] = useState({
     naziv: '',
     adresa: '',

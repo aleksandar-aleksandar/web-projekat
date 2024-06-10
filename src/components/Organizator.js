@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import "../styles/organizator.css";
 import edit from "../imgs/edit.png"
 
-const Organizator = ({ id, naziv, adresa, godinaOsnivanja, logo, kontaktTelefon, email, festivali}) => {
+const Organizator = ({ id, naziv, adresa, godinaOsnivanja, logo, kontaktTelefon, email, festivali, adminMode}) => {
 
   return (
     <div className="organizator-kartica">
@@ -13,8 +13,8 @@ const Organizator = ({ id, naziv, adresa, godinaOsnivanja, logo, kontaktTelefon,
       <p>{kontaktTelefon}</p>
       <p>{godinaOsnivanja}</p>
       <p>{email}</p>
-      <h4>{festivali}</h4>
-      <Link to={`/edit-organizator/${id}`}><button title='Edit' className='edit-btn'><img src={edit} /></button></Link>
+
+      {adminMode ? <Link to={`/edit-organizator/${id}`}><button title='Edit' className='edit-btn'><img src={edit} /></button></Link> : <></>}
     </div>
   );
 };

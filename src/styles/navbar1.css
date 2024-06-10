@@ -1,0 +1,119 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Navbar Styles */
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: transparent;
+    padding: 10px 20px;
+    color: white;
+  }
+  
+  .navbar-logo img {
+    height: 40px;
+  }
+  
+  .navbar a, .navbar button {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 16px;
+  }
+  
+  .navbar a:hover, .navbar button:hover {
+    text-decoration: underline;
+  }
+  
+  .navbar-buttons button {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .search-div form {
+    display: flex;
+    align-items: center;
+  }
+
+  .search-div input {
+    padding: 5px 10px;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    width: 200px; /* Increase the width as needed */
+    transition: border-color 0.3s ease;
+  }
+  
+  .search-div input:focus {
+    outline: none;
+    border-bottom: 2px solid #4caf50; /* Change color on focus */
+  }
+  
+  /* Toggle Button Container */
+  .toggle-button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    color: black;
+  }
+
+  .toggle-button-container h4{
+    margin: 10px;
+  }
+  
+  /* Login/Register Form Styles */
+  .login-div, .register-div {
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+  
+  .login-form, .register-form {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    max-width: 100%;
+  }
+  
+  .login-form h5, .register-form h5 {
+    margin-bottom: 5px;
+  }
+  
+  .login-form input, .register-form input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .login-form button, .register-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .login-form button:hover, .register-form button:hover {
+    background-color: #45a049;
+  }
+  
+  

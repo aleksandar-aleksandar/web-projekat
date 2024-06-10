@@ -18,11 +18,13 @@ function App() {
   const [festivali, setFestivali] = useState({});
   const [organizatori, setOrganizatori] = useState({});
   const [korisnici, setKorisnici] = useState({});
+  const [adminMode, setAdminMode] = useState(false);
   const firebaseUrl = 'https://projekatwd-bd6c7-default-rtdb.europe-west1.firebasedatabase.app';
 
   useEffect(() => {
     const fetchData = async () => {
       try {
+
         const festivalsResponse = await fetch(`${firebaseUrl}/festivali.json`);
         if (!festivalsResponse.ok) throw new Error('Failed to fetch festivals');
         const festivalsData = await festivalsResponse.json();
@@ -37,6 +39,7 @@ function App() {
         if (!korisniciResponse.ok) throw new Error('Failed to fetch users');
         const korisniciData = await korisniciResponse.json();
         setKorisnici(korisniciData);
+        
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -51,16 +54,16 @@ function App() {
     <div className="App">
 
       <Router>
-        <Navbar setSearchQuery={setSearchQuery} />
+        <Navbar setSearchQuery={setSearchQuery} setAdminMode={setAdminMode}/>
         <Routes>
-          <Route path="/" element={<Home festivali={festivali} organizatori={organizatori} searchQuery={searchQuery} />} />
-          <Route path="/festivals" element={<Festivals festivali={festivali} organizatori={organizatori} searchQuery={searchQuery} />} />
+          <Route path="/" element={<Home firebaseUrl={firebaseUrl} searchQuery={searchQuery} adminMode={adminMode}/>} />
+          <Route path="/festivals" element={<Festivals firebaseUrl={firebaseUrl} searchQuery={searchQuery}  adminMode={adminMode}/>} />
           <Route path="/organizator/:id" element={<OrganizatorDetalji festivali={festivali} organizatori={organizatori} />} />
-          <Route path="/festival/:id1/:id2" element={<FestivalDetalji festivali={festivali} organizatori={organizatori} />} />
-          <Route path="/add-new-organizer" element={<AddOrganizer firebaseUrl={firebaseUrl}/>} />
-          <Route path="/add-new-festival/:id" element={<AddFestival festivali={festivali} organizatori={organizatori} firebaseUrl = {firebaseUrl} setFestivali = {setFestivali}/>} />
-          <Route path="/edit-organizator/:id" element={<EditOrganizer festivali={festivali} organizatori={organizatori} firebaseUrl = {firebaseUrl} setFestivali = {setFestivali} setOrganizatori={setOrganizatori}/>} />
-          <Route path="/edit-festival/:id1/:id2" element={<EditFestival festivali={festivali} organizatori={organizatori} firebaseUrl={firebaseUrl}/>} />
+          <Route path="/festival/:id1/:id2" element={<FestivalDetalji festivali={festivali} organizatori={organizatori} firebaseUrl={firebaseUrl}/>} />
+          <Route path="/add-new-organizer" element={<AddOrganizer firebaseUrl={firebaseUrl}  adminMode={adminMode}/>} />
+          <Route path="/add-new-festival/:id" element={<AddFestival festivali={festivali} organizatori={organizatori} firebaseUrl = {firebaseUrl} setFestivali = {setFestivali}  adminMode={adminMode}/>} />
+          <Route path="/edit-organizator/:id" element={<EditOrganizer festivali={festivali} organizatori={organizatori} firebaseUrl = {firebaseUrl} setFestivali = {setFestivali} setOrganizatori={setOrganizatori}  adminMode={adminMode}/>} />
+          <Route path="/edit-festival/:id1/:id2" element={<EditFestival festivali={festivali} organizatori={organizatori} firebaseUrl={firebaseUrl}  adminMode={adminMode}/>} />
           <Route path="/*" element={<Error404/>}/>
         </Routes>
         <Footer />

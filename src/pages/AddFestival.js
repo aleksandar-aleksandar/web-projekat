@@ -1,9 +1,15 @@
 import React, { useState } from 'react';
 import "../styles/edit.css";
+import { useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 
-const AddFestival = ({ festivali, organizatori, firebaseUrl, setFestivali }) => {
+const AddFestival = ({ festivali, organizatori, firebaseUrl, setFestivali,adminMode }) => {
   const { id } = useParams();
+  const navigate = useNavigate();
+
+  if(!adminMode){
+    navigate("/*")
+  }
   
   const [formData, setFormData] = useState({
     naziv: '',

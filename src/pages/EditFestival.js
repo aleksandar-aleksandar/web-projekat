@@ -1,9 +1,15 @@
 import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams , useNavigate} from 'react-router-dom';
 import { useEffect } from 'react';
 import { v4 as uuid } from "uuid";
 
-const EditFestival = ({ festivali,organizatori, firebaseUrl }) => {
+const EditFestival = ({ festivali,organizatori, firebaseUrl,adminMode }) => {
+  const navigate = useNavigate();
+
+  if(!adminMode){
+    navigate("/*")
+  }
+
   const { id1, id2 } = useParams();
   const festival = festivali[id1][id2]
   console.log(festival)

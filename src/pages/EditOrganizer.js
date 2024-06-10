@@ -2,10 +2,14 @@ import React, { useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import "../styles/edit.css";
 
-const EditOrganizer = ({ festivali, organizatori, firebaseUrl, setFestivali, setOrganizatori }) => {
+const EditOrganizer = ({ festivali, organizatori, firebaseUrl, setFestivali, setOrganizatori , adminMode}) => {
   const { id } = useParams();
   const navigate = useNavigate();
   const organizator = organizatori[id];
+
+  if(!adminMode){
+    navigate("/*")
+  }
 
   const [formData, setFormData] = useState({
     naziv: organizator.naziv,
