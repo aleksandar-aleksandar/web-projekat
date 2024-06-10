@@ -79,13 +79,6 @@ const Festivals = ({ firebaseUrl,searchQuery , adminMode}) => {
         ))}
         <div>
 
-        {adminMode ? <Link to="/add-new-festival">
-          <div title="Add A Festival" className='add-festival'>
-            <div className='plus-div2'>
-              +
-            </div>
-          </div>
-        </Link> : <></>}
         </div>
       </div>
     </div>

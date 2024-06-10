@@ -60,7 +60,7 @@
 }
 
 input {
-    height: 30px;
+    height: 22px;
     font-size: 17px;
     border: none;
     border-bottom: 1px solid;
@@ -80,7 +80,7 @@ input:focus {
 .login-div button,
 .search-div button {
     height: 35px;
-    width: 81px;
+    width: 74px;
     margin-top: 16px;
     font-size: 16px;
     padding: 7px;

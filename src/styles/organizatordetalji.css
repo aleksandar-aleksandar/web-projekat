@@ -1,47 +1,91 @@
-.organizator-stranica{
-    padding-top: 30px;
+.organizator-stranica {
+    padding: 30px 20px;
     text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
 }
 
-.organizator-stranica h1{
-    font-size: 90px;
+.organizator-stranica h1 {
+    font-size: 3rem;
     margin-bottom: 40px;
+    color: #444;
 }
 
-.organizator-stranica img{
+.organizator-stranica img {
     object-fit: cover;
-    height: 50vh;
-    width: 50vh;
+    height: 100%; /* Set height to 100% */
+    width: 100%; /* Set width to 100% */
 }
 
-.brand-div{
+.brand-div {
     margin-bottom: 40px;
 }
 
-.info-div{
+span{
+    color: #000000;
+}
+
+.info-div {
     margin-top: 40px;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
     margin-bottom: 90px;
 }
 
-h2{
+h2 {
     margin-top: 20px;
-    font-size: 40px;
+    font-size: 2.3rem;
     margin-bottom: 20px;
+    color: #242424;
 }
 
-.info-div h4{
-    font-size: 28px;
+.info-div h4 {
+    font-size: 1.75rem;
+    margin: 10px 0;
+    color: #555;
 }
 
-.desc-div{
+
+
+.desc-div {
     max-width: 70%;
-    margin:0 auto;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fafafa;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.festivals-organized:hover{
+.festivals-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.festivals-info ul li {
+    margin-bottom: 0.5rem;
+}
+
+.festivals-info a {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+
+
+.festivals-info h4:hover {
+    color: rgb(0, 140, 233);
     cursor: pointer;
-    color: rgb(255, 0, 0);
-    transition: .3s ease;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #ddd;
+    margin: 1.5rem 0;
 }

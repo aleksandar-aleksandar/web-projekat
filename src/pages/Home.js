@@ -57,6 +57,7 @@ const Home = ({firebaseUrl,searchQuery, adminMode }) => {
                 email = {organizator.email}
                 festivali={organizator.festivali} 
                 adminMode = {adminMode}
+                firebaseUrl={firebaseUrl}
               />
             </Link>
           ))

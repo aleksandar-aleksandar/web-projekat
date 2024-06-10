@@ -1,23 +1,57 @@
-.festival-stranica{
-    text-align: center;
-}
-
-.festival-stranica h1{
-    font-size: 60px;
-    margin-bottom: 30px;
-}
-
-.festival-stranica a{
-    color: aqua;
-}
-
-.festival-stranica img{
-    object-fit: cover;
-    height: 50vh;
-    width: 50vh;
-}
-
-.img-div{
-    max-width: fit-content;
+.festival-stranica {
+    padding: 30px 20px;
+    max-width: 1200px;
     margin: 0 auto;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.carousel-div{
+    width: 100%;
+}
+
+.festival-stranica h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #444;
+}
+
+.festival-stranica img {
+    object-fit: cover;
+    width: 100%;
+    border-radius: 8px;
+}
+
+.brand-div {
+    margin-bottom: 40px;
+    text-align: center; /* Center align the text */
+}
+
+
+.info-div {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.info-div h2 {
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #242424;
+}
+
+.info-div h4 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    color: #555;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #ddd;
+    margin: 1.5rem 0;
 }

@@ -39,11 +39,11 @@ const OrganizatorDetalji = ({ organizatori, festivali }) => {
                 </div>
                 <div className='description-info'>
                     <h2>Bitne informacije</h2>
-                    <h4>{organizator.adresa}</h4>
-                    <h4>{organizator.godinaOsnivanja}</h4>
-                    <h4>{organizator.kontaktTelefon}</h4>
-                    <h4>{organizator.email}</h4>
-                    <div className='desc-div'><h4></h4></div>
+
+                    <h4><span>Adresa:</span> {organizator.adresa}</h4>
+                    <h4><span>Godina osnivanja:</span> {organizator.godinaOsnivanja}</h4>
+                    <h4><span>Telefon:</span> {organizator.kontaktTelefon}</h4>
+                    <h4><span>Email:</span> {organizator.email}</h4>
                 </div>
             </div>
         </div>

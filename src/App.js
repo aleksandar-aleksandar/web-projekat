@@ -55,7 +55,7 @@ function App() {
     <div className="App">
 
       <Router>
-        <Navbar setSearchQuery={setSearchQuery} setAdminMode={setAdminMode} adminMode={adminMode}/>
+        <Navbar setSearchQuery={setSearchQuery} setAdminMode={setAdminMode} adminMode={adminMode} firebaseUrl={firebaseUrl}/>
         <Routes>
           <Route path="/" element={<Home firebaseUrl={firebaseUrl} searchQuery={searchQuery} adminMode={adminMode}/>} />
           <Route path="/festivals" element={<Festivals firebaseUrl={firebaseUrl} searchQuery={searchQuery}  adminMode={adminMode}/>} />
