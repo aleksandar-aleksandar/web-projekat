@@ -19,13 +19,13 @@ const FestivalDetalji = ({festivali, organizatori, firebaseUrl}) => {
         <div className='festival-stranica'>
             <div className="brand-div">
                 <h1>{festival.naziv} by <Link to={`/organizator/${organizatorId}`}>{organizatori[organizatorId].naziv}</Link></h1>
-                <Carousel>
+                {festival.slike ? <Carousel>
                     {festival.slike.map((imageUrl, index) => (
                         <div key={index} className='carousel-div'>
                             <img src={imageUrl} alt={`Image ${index + 1}`} />
                         </div>
                     ))}
-                </Carousel>
+                </Carousel> : <></>}
             </div>
             <hr />
             <div className='info-div'>

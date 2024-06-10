@@ -38,9 +38,14 @@
     width: 35px;
     background:none;
     border: none;
+    float: left;
 }
 
 .edit-btn img{
+    max-height: 35px;
+}
+
+.del-btn img{
     max-height: 35px;
 }
 

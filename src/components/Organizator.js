@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import "../styles/organizator.css";
-import edit from "../imgs/edit.png"
+import edit from "../imgs/edit.png";
+import del from "../imgs/del.jpg";
 
 const Organizator = ({ id, naziv, adresa, godinaOsnivanja, logo, kontaktTelefon, email, festivali, adminMode, firebaseUrl}) => {
 
@@ -46,15 +47,17 @@ const Organizator = ({ id, naziv, adresa, godinaOsnivanja, logo, kontaktTelefon,
   return (
     <div className="organizator-kartica">
       
-      {adminMode ? <Link to={`/edit-organizator/${id}`}><button title='Edit' className='edit-btn'><img src={edit} /></button></Link> : <></>}
+      
       <img className="organizator-img" src={logo} alt={naziv} />
       <h1>{naziv}</h1>
       <p>{adresa}</p>
       <p>{kontaktTelefon}</p>
       <p>{godinaOsnivanja}</p>
       <p>{email}</p>
-
-      {adminMode ? <Link to={`/`}><button onClick={() => deleteOrganizer(id)} title='Delete' className='red'>Delete</button></Link> : <></>}
+      <div>
+      {adminMode ? <Link to={`/`}><button onClick={() => deleteOrganizer(id)} title='Delete' className=' red'>Delete</button></Link> : <></>}
+      {adminMode ? <Link to={`/edit-organizator/${id}`}><button title='Edit' className='edit-btn'><img src={edit} /></button></Link> : <></>}
+      </div>
     </div>
   );
 };
