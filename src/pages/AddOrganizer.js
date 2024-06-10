@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useParams, Link, useNavigate, json } from 'react-router-dom';
 import "../styles/edit.css";
+import { v4 as uuidv4 } from 'uuid';
 
-const EditOrganizer = ({ festivali, organizatori, firebaseUrl, setFestivali, setOrganizatori , adminMode}) => {
+const EditOrganizer = ({ festivali, organizatori, firebaseUrl, setFestivali, setOrganizatori, adminMode}) => {
   const navigate = useNavigate()
   if(!adminMode){
     navigate("/*")
@@ -15,7 +16,7 @@ const EditOrganizer = ({ festivali, organizatori, firebaseUrl, setFestivali, set
     kontaktTelefon: '',
     email: '',
     logo: '',
-    festivali: ''
+    festivali: uuidv4()
   });
 
   
@@ -30,26 +31,6 @@ const EditOrganizer = ({ festivali, organizatori, firebaseUrl, setFestivali, set
     e.preventDefault();
 
     try {
-      const responseFest = await fetch(`${firebaseUrl}/festivali.json`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({}),
-      });
-      if (!responseFest.ok) throw new Error('Failed to update festivals');
-
-      const responseDataFest = await responseFest.json(); // Parse response JSON
-      const generatedIdFest = responseDataFest.name; // Firebase-assigned ID
-
-      console.log('Firebase assigned ID for festivals:', generatedIdFest);
-
-      // Update formData with the generated ID
-      setFormData({
-        ...formData,
-        festivali: generatedIdFest, // Assuming 'festivali' is the correct property
-      });
-
       // Fetch organizers and use updated formData
       const responseOrg = await fetch(`${firebaseUrl}/organizatoriFestivala.json`, {
         method: 'POST',

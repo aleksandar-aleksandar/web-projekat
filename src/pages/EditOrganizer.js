@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import "../styles/edit.css";
+import { v4 as uuidv4 } from 'uuid';
 
 const EditOrganizer = ({ festivali, organizatori, firebaseUrl, setFestivali, setOrganizatori , adminMode}) => {
   const { id } = useParams();
