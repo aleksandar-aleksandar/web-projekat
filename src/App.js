@@ -65,7 +65,7 @@ function App() {
           <Route path="/add-new-festival/:id" element={<AddFestival festivali={festivali} organizatori={organizatori} firebaseUrl = {firebaseUrl} setFestivali = {setFestivali}  adminMode={adminMode}/>} />
           <Route path="/edit-organizator/:id" element={<EditOrganizer festivali={festivali} organizatori={organizatori} firebaseUrl = {firebaseUrl} setFestivali = {setFestivali} setOrganizatori={setOrganizatori}  adminMode={adminMode}/>} />
           <Route path="/edit-festival/:id1/:id2" element={<EditFestival festivali={festivali} organizatori={organizatori} firebaseUrl={firebaseUrl}  adminMode={adminMode}/>} />
-          <Route path="/users" element={<Users korisnici = {korisnici} adminMode={adminMode}/>}/>
+          <Route path="/users" element={<Users korisnici = {korisnici} adminMode={adminMode} firebaseUrl={firebaseUrl}/>}/>
           <Route path="/*" element={<Error404/>}/>
         </Routes>
         <Footer />
