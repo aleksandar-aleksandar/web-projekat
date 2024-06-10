@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import "../styles/navbar1.css"
 import logo from "../imgs/logo.png"
 import ToggleButton from './ToggleButton';
-const Navbar = ({ setSearchQuery, setAdminMode}) => {
+const Navbar = ({ setSearchQuery, setAdminMode, adminMode}) => {
   const [showLogin, setShowLogin] = useState(false)
   const [showRegister, setShowRegister] = useState(false)
 
@@ -40,6 +40,7 @@ const Navbar = ({ setSearchQuery, setAdminMode}) => {
           </form>
         </div>
         <div className="navbar-buttons">
+          {adminMode ? <Link to="/users">Users</Link>:<></>}
           <Link to="/">Organizers</Link>
           <Link to="/festivals">Festivals</Link>
           <button onClick={toggleShowLogin}>Login</button>

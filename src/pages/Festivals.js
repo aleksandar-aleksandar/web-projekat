@@ -29,10 +29,7 @@ const Festivals = ({ firebaseUrl,searchQuery , adminMode}) => {
     };
 
     fetchData();
-  }, []);
-
-  console.log(organizatori)
-  console.log(festivali)
+  }, [firebaseUrl]);
 
   const highlightText = (text, query) => {
     if (!query) return text;
@@ -64,7 +61,6 @@ const Festivals = ({ firebaseUrl,searchQuery , adminMode}) => {
         {Object.entries(filterredFestivali).map(([id, festival]) => (
           <div>
           <Link key={id} to={`/festival/${festival.organizerId}/${festival.id}`}>
-            {console.log(festival.organizerId + " " + id)}
             <Festival
               organizerId={festival.organizerId}
               id={festival.id}

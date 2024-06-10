@@ -1,0 +1,43 @@
+.cards-wrapper{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.user-card {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px;
+    width: 600px;
+}
+
+.user-card .attribute {
+    margin-bottom: 10px;
+}
+
+.user-card .attribute label {
+    font-weight: bold;
+}
+
+.user-card .attribute input[type="text"] {
+    width: calc(100% - 20px);
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.user-card .attribute .edit-button {
+    margin-left: 10px;
+    cursor: pointer;
+    color: blue;
+}
+
+.user-card .delete-button {
+    margin: 0 auto;
+    cursor: pointer;
+
+}

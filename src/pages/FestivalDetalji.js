@@ -6,31 +6,21 @@ import { Carousel } from 'react-responsive-carousel'; // Import Carousel compone
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // Import Carousel styles
 import "../styles/festivaldetalji.css";
 
-const FestivalDetalji = ({festivals, organizators, firebaseUrl}) => {
 
-    const { id1, id2 } = useParams();
+const FestivalDetalji = ({festivali, organizatori, firebaseUrl}) => {
+    const  {id1,id2} = useParams()
 
-    const [organizatori, setOrganizatori] = useState({})
-    const [festivali, setFestivali] = useState({})
-
-
-    
-    const getFestivali = fetch(`${firebaseUrl}/festivali.json`)
-    .then(response => setFestivali(response.json))
-
-    getFestivali()
 
     console.log(festivali)
-    console.log(organizatori)
+    const festival = festivali[id1][id2]
     
-
-    const festival = festivali[id1][id2];
     
     const organizatorIds = Object.entries(organizatori)
         .filter(([id, organizator]) => organizator.festivali === id1)
         .map(([id, organizator]) => id);
 
     const organizatorId = organizatorIds[0];
+    console.log(festival)
 
     return (
         <div className='festival-stranica'>

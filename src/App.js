@@ -12,6 +12,7 @@ import Footer from "./components/Footer";
 import EditFestival from "./pages/EditFestival";
 import EditOrganizer from "./pages/EditOrganizer";
 import { Error404 } from "./pages/Error404";
+import Users from "./pages/Users";
 
 function App() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -54,7 +55,7 @@ function App() {
     <div className="App">
 
       <Router>
-        <Navbar setSearchQuery={setSearchQuery} setAdminMode={setAdminMode}/>
+        <Navbar setSearchQuery={setSearchQuery} setAdminMode={setAdminMode} adminMode={adminMode}/>
         <Routes>
           <Route path="/" element={<Home firebaseUrl={firebaseUrl} searchQuery={searchQuery} adminMode={adminMode}/>} />
           <Route path="/festivals" element={<Festivals firebaseUrl={firebaseUrl} searchQuery={searchQuery}  adminMode={adminMode}/>} />
@@ -64,6 +65,7 @@ function App() {
           <Route path="/add-new-festival/:id" element={<AddFestival festivali={festivali} organizatori={organizatori} firebaseUrl = {firebaseUrl} setFestivali = {setFestivali}  adminMode={adminMode}/>} />
           <Route path="/edit-organizator/:id" element={<EditOrganizer festivali={festivali} organizatori={organizatori} firebaseUrl = {firebaseUrl} setFestivali = {setFestivali} setOrganizatori={setOrganizatori}  adminMode={adminMode}/>} />
           <Route path="/edit-festival/:id1/:id2" element={<EditFestival festivali={festivali} organizatori={organizatori} firebaseUrl={firebaseUrl}  adminMode={adminMode}/>} />
+          <Route path="/users" element={<Users korisnici = {korisnici} adminMode={adminMode}/>}/>
           <Route path="/*" element={<Error404/>}/>
         </Routes>
         <Footer />
